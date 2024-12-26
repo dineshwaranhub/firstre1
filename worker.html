@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Work Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 60px; /* Space for the header */
+        }
+
+        h2 {
+            color: #fbc02d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            min-height: 500px; /* Increased height for the form */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #8c8c8c;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #fbc02d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f57f17;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Success Modal Styles */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-content {
+            background-color: #4CAF50;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-content h3 {
+            margin-bottom: 20px;
+        }
+
+        .success-content button {
+            background-color: #fbc02d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .success-content button:hover {
+            background-color: #f57f17;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px 0; /* Reduced padding for a smaller footer */
+            font-size: 12px; /* Smaller font size */
+        }
+        /* Home Button */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #FFCC00;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .home-btn:hover {
+      background-color: #e6b800;
+    }
+    
+    /* Logo styles */
+    .logo {
+        position: fixed;
+        bottom: 10px;  /* Moves the logo down */
+        right: 10px;   /* Moves the logo to the right side */
+        z-index: 1000;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+  <!-- Logo on the right corner below -->
+  <div class="logo">
+    <img src="LOGO.png" alt="DinesH Catering Logo">
+  </div>
+    
+    <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
+    
+
+    <!-- Transparent Header -->
+    <h1>𝗪𝗼𝗿𝗸 𝗥𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻</h1>
+    <form id="registrationForm">
+        <label for="work-type">1. Work Type:</label>
+        <select id="work-type" name="work-type" required>
+            <option value="catering">Catering Work</option>
+            <option value="chef">Chef</option>
+        </select>
+
+        <label for="location">2. Tamil Nadu Location:</label>
+        <select id="location" name="location" required>
+            <option value="">--Select Location--</option>
+            <option value="coimbatore">Coimbatore</option>
+            <option value="madurai">Madurai</option>
+            <option value="trichy">Trichy</option>
+            <option value="salem">Salem</option>
+            <option value="tirunelveli">Tirunelveli</option>
+            <option value="vellore">Vellore</option>
+            <option value="tuticorin">Tirupur</option>
+            <option value="karur">Karur</option>
+            <option value="thanjavur">Thanjavur</option>
+            <option value="thiruvannamalai">Thiruvannamalai</option>
+            <option value="dharmapuri">Dharmapuri</option>
+            <option value="krishnagiri">Krishnagiri</option>
+            <option value="nagapattinam">Nagapattinam</option>
+            <option value="perambalur">Perambalur</option>
+            <option value="ariyalur">Ariyalur</option>
+            <option value="pudukkottai">Pudukkottai</option>
+            <option value="kanchipuram">Kanchipuram</option>
+            <option value="tiruvarur">Tiruvarur</option>
+            <option value="cuddalore">Cuddalore</option>
+            <option value="pondicherry">Pondicherry</option>
+            <option value="namakkal">Namakkal</option>
+            <option value="madurai">Madurai</option>
+            <option value="sivaganga">Sivaganga</option>
+            <option value="dindigul">Dindigul</option>
+            <option value="ramanathapuram">Ramanathapuram</option>
+            <option value="vellore">Vellore</option>
+            <option value="kanyakumari">Kanyakumari</option>
+            <option value="karur">Karur</option>
+            <option value="the Nilgiris">The Nilgiris</option>
+            <option value="sankarankovil">Sankarankovil</option>
+            <option value="vellore">Vellore</option>
+            <option value="tiruvallur">Tiruvallur</option>
+            <option value="tiruvarur">Tiruvarur</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="name">3. Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">4. Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="contact">5. Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}" placeholder="Enter 10-digit number">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Modal for Registration Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Registration Details</h3>
+            <p><strong>Work Type:</strong> <span id="modal-work-type"></span></p>
+            <p><strong>Location:</strong> <span id="modal-location"></span></p>
+            <p><strong>Name:</strong> <span id="modal-name"></span></p>
+            <p><strong>Email:</strong> <span id="modal-email"></span></p>
+            <p><strong>Contact Number:</strong> <span id="modal-contact"></span></p>
+            <button id="confirmButton">Confirm</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <h3>Registration Successful!</h3>
+            <p>Your details have been successfully registered.</p>
+            <button id="closeSuccessButton">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; DinesH CATERING MANAGEMENT SYSTEM</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Capture form data
+            var workType = document.getElementById('work-type').value;
+            var location = document.getElementById('location').value;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var contact = document.getElementById('contact').value;
+
+            // Populate the modal with the captured data
+            document.getElementById('modal-work-type').textContent = workType;
+            document.getElementById('modal-location').textContent = location;
+            document.getElementById('modal-name').textContent = name;
+            document.getElementById('modal-email').textContent = email;
+            document.getElementById('modal-contact').textContent = contact;
+
+            // Show the modal
+            document.getElementById('modal').style.display = 'flex';
+        });
+
+        document.getElementById('confirmButton').addEventListener('click', function() {
+            // Hide the registration modal
+            document.getElementById('modal').style.display = 'none';
+
+            // Show the success modal
+            document.getElementById('successModal').style.display = 'flex';
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            // Hide the modal if the user cancels
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        document.getElementById('closeSuccessButton').addEventListener('click', function() {
+            // Hide the success modal
+            document.getElementById('successModal').style.display = 'none';
+
+            // Wait for 4 seconds and then refresh the page
+            setTimeout(function() {
+                location.reload(); // This will reload the page
+            }, 4000); // 4000 milliseconds = 4 seconds
+        });
+    </script>
+
+</body>
+</html>
